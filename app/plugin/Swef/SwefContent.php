@@ -13,8 +13,6 @@ class SwefContent extends \Swef\Bespoke\Plugin {
 */
 
     public function __construct ($page) {
-        // Get definitions
-        require_once SWEF_CONFIG_PATH.'/Swef/SwefContent.define.php';
         // Always construct the base class - PHP does not do this implicitly
         parent::__construct ($page,'\Swef\SwefContent');
     }
