@@ -53,17 +53,17 @@ class SwefContent extends \Swef\Bespoke\Plugin {
                 }
             }
             if ($this->error==SWEF_HTTP_STATUS_CODE_403) {
-                header (SWEF_HTTP_STATUS_CODE_403.SWEF_STR__SPACE.sweferror_403);
+                $this->page->swef->statusHeader (SWEF_HTTP_STATUS_CODE_403);
                 header (SWEF_STR_CONTENTTYPE.swefcontent_error_contenttype);
                 echo SWEF_HTTP_STATUS_CODE_403.SWEF_STR__SPACE.sweferror_403;
             }
             elseif ($this->error==SWEF_HTTP_STATUS_CODE_404) {
-                header (SWEF_HTTP_STATUS_CODE_404.SWEF_STR__SPACE.sweferror_404);
+                $this->page->swef->statusHeader (SWEF_HTTP_STATUS_CODE_404);
                 header (SWEF_STR_CONTENTTYPE.swefcontent_error_contenttype);
                 echo SWEF_HTTP_STATUS_CODE_404.SWEF_STR__SPACE.sweferror_404;
             }
             else {
-                header (SWEF_HTTP_STATUS_MSG_200);
+                $this->page->swef->statusHeader (SWEF_HTTP_STATUS_CODE_200);
                 header (SWEF_STR_CONTENTTYPE.mime_content_type($f));
                 echo file_get_contents ($f);
             }
