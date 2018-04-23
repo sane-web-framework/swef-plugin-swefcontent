@@ -23,7 +23,6 @@ BEGIN
         ,`content_Create_Permitted` AS `create_permitted`
         ,`content_Update_Permitted` AS `update_permitted`
         ,`content_Delete_Permitted` AS `delete_permitted`
-        ,'usergroup,directory,read_permitted,update_permitted,delete_permitted,explain' AS `explain`
   FROM `swefcontent_permit`
   WHERE ctx LIKE `content_Context_LIKE`
     AND pth LIKE CONCAT (`content_Directory`,'/%')
